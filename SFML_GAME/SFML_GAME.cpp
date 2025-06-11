@@ -20,9 +20,12 @@ sfml-system-d.lib
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode({ 200, 200 }), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode({ 400, 300 }), "SFML works!");
+    sf::CircleShape circle(100.f);
+    circle.setFillColor(sf::Color::Green);
+    circle.setOrigin({ -100.f, -100.f }); // Set position using sf::Vector2f
+    //circle.setOrigin({ circle.getRadius(), circle.getRadius() });
+
 
     while (window.isOpen())
     {
@@ -33,7 +36,7 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
+        window.draw(circle);
         window.display();
     }
 }
