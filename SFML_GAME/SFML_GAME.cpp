@@ -15,6 +15,7 @@ sfml-audio-d.lib
 sfml-network-d.lib
 sfml-system-d.lib
 */
+
 #include <SFML/Graphics.hpp>
 
 int main()
