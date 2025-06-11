@@ -1,5 +1,5 @@
 # SFML_GAME
-4 - Create new empty C++ console application project.
+4 - Pre_compiled library https://www.youtube.com/watch?v=FrVABOhRyQg Create new empty C++ console application project.
 
 5 - Open project properties setting (alt+enter shortcut).
 
