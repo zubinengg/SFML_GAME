@@ -10,7 +10,21 @@
 8 - For All Configurations, Under Configuration Properties-Linker-General : Add Additional Library Directory YourPathHere\SFML-3.0.0\lib
 
 8 - For Debug Configuration, Configuration Properties-Linker-Input : Add Additional Dependencies sfml-window-d.lib sfml-graphics-d.lib sfml-system-d.lib
+Lines for Linker-Input (Debug):
+sfml-graphics-d.lib
+sfml-window-d.lib
+sfml-audio-d.lib
+sfml-network-d.lib
+sfml-system-d.lib
 
 9 - For Release Configuration, Configuration Properties-Linker-Input : Add Additional Dependencies sfml-window.lib sfml-graphics.lib sfml-system.lib
+Lines for Linker-Input (Release):
+sfml-graphics.lib
+sfml-window.lib
+sfml-audio.lib
+sfml-network.lib
+sfml-system.lib
+
+
 
 10 - Paste in the following test code from SFML https://www.sfml-dev.org/tutorials/3....
