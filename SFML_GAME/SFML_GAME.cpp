@@ -17,28 +17,37 @@ sfml-system-d.lib
 */
 
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Audio.hpp>
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode({ 400, 300 }), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode({ 400, 300 }), "MY SFML Games", sf::Style::Titlebar | sf::Style::Close);
     sf::CircleShape circle(100.f);
-    circle.setFillColor(sf::Color::Green);
+    circle.setFillColor(sf::Color::Blue);
     circle.setOrigin({ -100.f, -100.f }); // Set position using sf::Vector2f
     //circle.setOrigin({ circle.getRadius(), circle.getRadius() });
+ 
+   
 
-
-    while (window.isOpen())
-    {
-        while (const std::optional event = window.pollEvent())
-        {
-            if (event->is<sf::Event::Closed>())
-                window.close();
+    while (window.isOpen())    {
+        
+        
+        while (const std::optional ev =window.pollEvent())
+        {           
+            if (ev->is<sf::Event::Closed>() || ((ev->is<sf::Event::KeyPressed>() && ev->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Escape)))
+				window.close();
         }
 
-        window.clear();
+        window.clear(sf::Color::Cyan);
+        // UPdate
         window.draw(circle);
+
+		// Draw
         window.display();
     }
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
