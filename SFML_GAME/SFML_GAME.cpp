@@ -20,6 +20,8 @@ sfml-system-d.lib
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Audio.hpp>
+#include <vector>
+#include <iostream>
 
 int main()
 {
@@ -29,7 +31,11 @@ int main()
     circle.setOrigin({ -100.f, -100.f }); // Set position using sf::Vector2f
     //circle.setOrigin({ circle.getRadius(), circle.getRadius() });
  
-   
+	std::string s("device");
+    for (std::string::iterator it = s.begin(); it != s.end(); ++it)
+    {
+        std::cout << *it << "\t";
+	}
 
     while (window.isOpen())    {
         
