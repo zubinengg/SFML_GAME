@@ -23,6 +23,24 @@ sfml-system-d.lib
 #include <vector>
 #include <iostream>
 
+static std::string string_iteratiror(std::string s)
+{
+    std::string result;
+    for (std::string::iterator it = s.begin(); it != s.end(); ++it)
+    {
+        if (it + 1 != s.end())
+        {
+            result += *it;
+            result += ",";
+        }
+        else
+        {
+            result += *it;
+        }
+    }
+    return result;
+}
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode({ 400, 300 }), "MY SFML Games", sf::Style::Titlebar | sf::Style::Close);
@@ -32,10 +50,7 @@ int main()
     //circle.setOrigin({ circle.getRadius(), circle.getRadius() });
  
 	std::string s("device");
-    for (std::string::iterator it = s.begin(); it != s.end(); ++it)
-    {
-        std::cout << *it << "\t";
-	}
+	std::cout << string_iteratiror(s) << std::endl;
 
     while (window.isOpen())    {
         
